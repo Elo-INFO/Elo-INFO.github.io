@@ -7,7 +7,7 @@ if (window.DeviceOrientationEvent) {
   	  //document.getElementById("z").innerHtml = event.Z;
   	  document.getElementById("alpha").innerHtml = event.alpha;
   	  document.getElementById("beta").innerHtml = event.beta;
-  	  document.getElementById("gamme").innerHtml = event.gamma;
+  	  document.getElementById("gamma").innerHtml = event.gamma;
     }, 1000);
   });
 }
