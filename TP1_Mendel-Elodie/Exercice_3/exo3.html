@@ -1,25 +1,57 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="fr">
 <head>
-	<title>Exercice 3 | Carto Geo</title>
-	<meta charset="utf-8">
-	<script type="text/javascript" src="exo3.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title>Exo Carto Geo : TD1 Exo 2</title>
+    <link rel="icon" href="">
+    
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Arnaud LYSENSOONE--BIJOU">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="" media="all">
+    
+    <!-- JAVASCRIPT -->
+    <script type="text/javascript" src=""> </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<body>
-	<h1>Exercice 3</h1>
-
-	<p>Supported? : <b id="doeSupported"></b></p>
-
-	<h2>Orientation du smartphone</h2>
-		<p>Orientation : X <b id="x"></b>, Y <b id="y"></b>, Z <b id="z"></b></p>
-    	<p>Alpha : <b id="alpha"></b></p>
-    	<p>Beta : <b id="beta"></b></p>
-    	<p>Gamma : <b id="gamma"></b></p>
-
-	<h2>Mouvement du smartphone</h2>
-		<p>Rotation : <b id="rotation"></b></p>
-    	<p>Acceleration : <b id="acceleration"></b></p>
-
+<body>	
+    <h1>TP 1 : Exo 3 </h1>
+    <p>Orientation : X <b id="x"></b>, Y <b id="y"></b>, Z <b id="z"></b>, Alpha <b id="alpha"></b>, Beta <b id="beta"></b>, Gamma <b id="gamma"></b></p>
+    <p>Mouvement : Rotation <b id="rot"></b>, Accéleration <b id="acc"></b></p>
 </body>
+    
+<script>
+    if (window.DeviceOrientationEvent) {
+      window.addEventListener('deviceorientation', function(event) {
+        $("#x").text(event.X);
+        $("#y").text(event.Y);
+        $("#z").text(event.Z);
+        $("#alpha").text(event.alpha);
+        $("#beta").text(event.beta);
+        $("#gamma").text(event.gamma);
+      });
+    }
+    
+    if (window.DeviceMotionEvent) {
+        window.addEventListener('devicemotion', function(event) {
+            let rx,ry,rz;
+            let ax,ay,az;
+            
+            rx = event.acceleration.x;
+            ry = event.acceleration.y;
+            rz = event.acceleration.z;
+            
+            ax = event.rotationRate.alpha;
+            ay = event.rotationRate.beta;
+            az = event.rotationRate.gamma;
+            
+            $("#rot").text("[" + rx + "," +ry +"," +rz + "]");
+            $("#acc").text("[" + ax + "," +ay +"," +az + "]");
+        });
+    }
+</script>
 </html>
