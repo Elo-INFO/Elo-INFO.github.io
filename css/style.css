@@ -3,7 +3,7 @@ body{
 	color: white;
 }
 
-h1,p{
+h1,p,h2{
 	text-align: center;
 }
 
@@ -11,4 +11,8 @@ a{
 	margin: 0 auto;
 	display:block;
 	text-align: center;
+}
+
+#map{
+	height: 400px;
 }
