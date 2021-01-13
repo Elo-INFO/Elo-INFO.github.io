@@ -7,12 +7,12 @@ function initMap() {
     // Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
     macarte = L.map('map').setView([lat, lon], 5);
     // Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. Nous devons lui préciser où nous souhaitons les récupérer. Ici, openstreetmap.fr
-    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+    L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.{ext}', {
     // Il est toujours bien de laisser le lien vers la source des données
-        attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
+        attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         minZoom: 1,
-        mapTypeId: "terrain",
-        maxZoom: 20
+        maxZoom: 20,
+        ext: 'png'
         }).addTo(macarte);
         // Nous ajoutons un marqueur
         //var marker = L.marker([lat, lon]).addTo(macarte);
@@ -28,7 +28,9 @@ function initMap() {
         triangle.setStyle({
             color: 'red'
         });
-}
+
+        
+    }
 window.onload = function(){
     // Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
     initMap(); 
@@ -38,4 +40,16 @@ navigator.geolocation.getCurrentPosition(function(pos) {
         let crd = pos.coords;
         document.getElementById("longitude").innerHTML = crd.longitude;
         document.getElementById("latitude").innerHTML = crd.latitude;
+
+        var latlngMarseille = L.latLng(43.3, 5.4);
+        var latlngCurrentPosition = L.latLng(crd.latitude, crd.longitude);
+
+        document.getElementById("distance").innerHTML = latlngMarseille.distanceTo(latlngCurrentPosition);
+
+        var circle = L.circle([crd.latitude, crd.longitude], {
+          color: "red",
+          fillColor: "#f03",
+          fillOpacity: 0.5,
+          radius: 50.0
+      }).addTo(macarte);
 });
