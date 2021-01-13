@@ -1,0 +1,18 @@
+body{
+	background-color: black;
+	color: white;
+}
+
+h1{
+	text-align: center;
+}
+
+a{
+	margin: 0 auto;
+	display:block;
+	text-align: center;
+}
+
+#map{
+    height:400px;
+}
