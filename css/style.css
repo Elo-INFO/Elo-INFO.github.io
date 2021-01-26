@@ -9,10 +9,30 @@ h1,p,h2{
 
 a{
 	margin: 0 auto;
-	display:block;
+	display: block;
 	text-align: center;
 }
 
 #map{
 	height: 400px;
+}
+
+#exo1TP3 {
+	text-align: center;
+}
+
+#porte {
+  fill: #FFC300;
+}
+
+#porte:hover {
+  fill: #900C3F;
+}
+
+.day {
+  fill: #0CC1F3;
+}
+
+.night {
+  fill: #D8D8D8;
 }

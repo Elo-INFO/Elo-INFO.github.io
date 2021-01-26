@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercice 1 | Carto Geo</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="exo1.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../css/style.css">
+</head>
+<body onload="drawCanvas()">
+	<h1>Exercice 1 : Dessinez avec un canvas HTML et avec un svg</h1> 
+	<h2>HTML</h2>
+	<div id="exo1TP3">
+        <canvas id="canvas" width="500" height="300"></canvas>
+    </div>
+
+	<h2>SVG</h2>
+	<div id="exo1TP3">
+        <svg width="500" height="300">
+          <!-- Ciel -->	
+          <rect id="ciel" x="0" y="0" width="500" height="200" class="day"/>
+
+          <!-- Soleil -->	
+          <circle id="soleil" cx="350" cy="50" r="30" style="fill:#FFFF00"/>
+
+          <!-- Prairie -->
+          <rect x="0" y="200" width="500" height="100" style="fill:#307330"/>
+
+          <!-- Montagnes -->	
+          <polygon points="0,200 75,50 150,200" style="fill:#735530"/>
+          <polygon points="140,200 180,100 220,200" style="fill:#866b48"/>
+          <polygon points="205,200 280,75 355,200" style="fill:#735530"/>
+          <polygon points="340,200 420,69 500,200" style="fill:#866b48"/>
+          
+          <!-- Mur -->
+          <rect x="25" y="215" width="80" height="75" style="fill:#9FFFCD"/>
+
+          <!-- Porte -->	
+          <rect id="porte" x="40" y="245" width="35" height="45"/>
+
+          <!-- Toit -->
+          <polygon points="25,215 65,180 105,215" style="fill:#FF0000"/>
+        </svg>
+      </div>
+</body>
+</html>
