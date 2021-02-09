@@ -16,7 +16,7 @@ $(document).ready(function() {
   function changeOrientation(orientation) {
     console.log(orientation) ;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(compass, 0, 0);
+    ctx.drawImage(compass, 150, 150);
     ctx.save();
     ctx.translate(100, 100);
     ctx.rotate(orientation.alpha * (Math.PI / 180));
