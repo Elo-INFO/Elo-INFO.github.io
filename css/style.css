@@ -41,7 +41,7 @@ a{
   margin: auto ;
   width: 500px ;
   height: 500px ;
-  background: url('img/compass.svg') ;
+  background: url('../Projet/Projet/img/compass.svg') ;
   background-repeat: no-repeat;
   background-size: contain;
 }
