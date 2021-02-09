@@ -9,13 +9,11 @@ const light = new THREE.AmbientLight( 0xffffff );
 scene.add( light );
 
 const geometry = new THREE.SphereGeometry(1, 32, 32);
-const texture = new THREE.TextureLoader().load( './textures/earth_texture.jpg' );
+const texture = new THREE.TextureLoader().load( 'textures/earth_texture.jpg' );
 const materialTex = new THREE.MeshBasicMaterial( { map: texture } );
-//  materialTex.map = loader.load('textures/earth_texture.jpg');
 const earth = new THREE.Mesh( geometry, materialTex );
 
 scene.add( earth ) ;
-//  camera.lookAt( earth ) ;
 
 const controls = new THREE.OrbitControls( camera, renderer.domElement );
 
